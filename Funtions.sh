@@ -6,6 +6,7 @@
 # Purpose:                      Write a script that prints the login history of users on this computer.
 
 #main
+# I'm creating a function for Login_History
 function Login_History {
          sudo last
 }
@@ -15,7 +16,7 @@ Login_History
 
 #This will add text asking a question 
 Question="Anything Sketchy?"
-  
+#Here I added a $ to use the variable $
 echo $Question
 
 # The yes/no part of the code I found from https://stackoverflow.com/a/226724
