@@ -13,7 +13,7 @@
 # Create four directories using the script.
 # I found that you can use the curly brackets to make multiple directories in Bash. So instead of typing out each directory name I just used {1..4} 
 # I found this example here https://askubuntu.com/questions/731721/is-there-a-way-to-create-multiple-directories-at-once-with-mkdir
-# This code was written so that if I wanted to change the names of the directories and files, I could do that here, but keep the function untouched.
+# This code was written so that if I wanted to change the names of the directories and files, I could do that easily without having to rewrite much of the code.
 # Load each directory path into an array.
 dirs=(beans{1..4})
 filename="yum"
