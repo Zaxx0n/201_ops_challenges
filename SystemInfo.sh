@@ -15,7 +15,7 @@
 # and -A Print NUM lines of trailing context after matching lines.
   select yn in "Computer Name" "CPU" "RAM" "Display Adapter" "Network Adapter" ; do
         case $yn in
-            "Computer Name" ) sudo lshw | grep ubuntudev; break;;
+            "Computer Name" ) echo "Your computer name is:" && sudo lshw | grep ubuntudev; break;;
             CPU ) sudo lshw | grep -A 6 '*-cpu'; break;;
             RAM ) sudo lshw | grep -A 3 '*-memory'; break;;
             "Display Adapter" ) sudo lshw | grep -A 12 '*-display'; break;;     
@@ -26,4 +26,3 @@
 # echo "The Computer Name is: ubuntudev"
 echo "Your query was completed on" `date`
 #end
-# the find file part of this code was found on https://unix.stackexchange.com/questions/259352/find-files-using-shell-script 
