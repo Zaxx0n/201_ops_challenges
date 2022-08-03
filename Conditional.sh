@@ -1,6 +1,6 @@
 #!/user/bin/bash
 
-# Script: Ops 201 Class 05 Ops Challenge Solution
+# Script: Ops 201 Class 06 Ops Challenge Solution
 # Author: Zachary Derrick                    
 # Date of latest revision:  8/1/22    
 # Purpose: Create a script that detects if a file or directory exists, 
@@ -18,9 +18,9 @@
     read filepath
 #below is a if then statement that looks for a file in a filepath. find searches for files in a directory hierarchy
 # -quit is to stop searching the file system once we have found what we want. find is used to search in directories
-# while grep returns files whose content matches the pattern you are looking for. grep -q allows grep to stop as soon as it finds the first match
-if find $filepath -name $namefile -quit |
-   grep -q '^'; then
+# while grep returns files whose content matches the pattern you are looking for. grep -q silences standard output so that it isn't printed
+if find $filepath -name $namefile -quit 
+    then grep -q '^';
   echo "The file exists"
 else
   echo "Your file does not exist"
@@ -42,3 +42,4 @@ else
 fi
 
 #end
+# the find file part of this code was found on https://unix.stackexchange.com/questions/259352/find-files-using-shell-script 
