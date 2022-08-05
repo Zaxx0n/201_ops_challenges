@@ -15,13 +15,14 @@
 # and -A Print NUM lines of trailing context after matching lines.
   select yn in "Computer Name" "CPU" "RAM" "Display Adapter" "Network Adapter" ; do
         case $yn in
-            "Computer Name" ) echo "Your computer name is:" && sudo lshw | grep ubuntudev; break;;
+            "Computer Name" ) echo "Your computer name is:" && sudo lshw | grep -E '' | head -n1; break;;
             CPU ) sudo lshw | grep -A 6 '*-cpu'; break;;
             RAM ) sudo lshw | grep -A 3 '*-memory'; break;;
             "Display Adapter" ) sudo lshw | grep -A 12 '*-display'; break;;     
             "Network Adapter" ) sudo lshw | grep -A 15 '*-network'; break;;
         esac       
     done
+# sudo lshw | grep ubuntudev    
 # sudo lshw -c system | grep -E 'product:'; break;;
 # echo "The Computer Name is: ubuntudev"
 echo "Your query was completed on" `date`
